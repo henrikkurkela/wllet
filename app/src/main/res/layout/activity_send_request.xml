@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SendRequestActivity">
+
+    <TextView
+        android:id="@+id/textViewSendRequest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
+        android:text="Send or Request"
+        android:textSize="42sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/amountOfMoney"
+        android:layout_width="350dp"
+        android:layout_height="300dp"
+        android:hint="€"
+        android:textAlignment="center"
+        android:textSize="100sp"
+        app:layout_constraintTop_toBottomOf="@id/textViewSendRequest"
+        app:layout_constraintEnd_toEndOf="@id/recipientNumber"
+        app:layout_constraintStart_toStartOf="@id/recipientNumber"/>
+
+    <EditText
+        android:id="@+id/recipientNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="number"
+        app:layout_constraintTop_toBottomOf="@+id/amountOfMoney"
+        app:layout_constraintEnd_toEndOf="@id/buttonRequest"
+        app:layout_constraintStart_toStartOf="@id/buttonSend"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSend"/>
+
+    <Button
+        android:id="@+id/buttonSend"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="Send"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recipientNumber"/>
+
+    <Button
+        android:id="@+id/buttonRequest"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="Request"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recipientNumber"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
