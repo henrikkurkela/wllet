@@ -13,6 +13,7 @@
         <activity android:name=".ExchangeActivity" />
         <activity android:name=".AddCardActivity" />
         <activity android:name=".RegisterActivity" />
+        <activity android:name=".WalletActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
