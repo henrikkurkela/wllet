@@ -54,7 +54,7 @@ class RegisterActivity : AppCompatActivity() {
                             val intent = Intent(this, MainActivity::class.java)
                             startActivity(intent)
                         } else {
-                            Toast.makeText(baseContext, "Registration failed", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(baseContext, "Registration failed ${task.exception}", Toast.LENGTH_SHORT).show()
                         }
                     }
             }
