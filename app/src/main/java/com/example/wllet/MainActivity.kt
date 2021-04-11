@@ -51,8 +51,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun showRegistration(view: View) {
-        val createAccountLink = findViewById<TextView>(R.id.createAccount)
-        createAccountLink.setOnClickListener{
+        view.setOnClickListener{
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }

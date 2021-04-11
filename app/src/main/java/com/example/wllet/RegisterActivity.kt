@@ -112,4 +112,18 @@ class RegisterActivity : AppCompatActivity() {
             }
         }
     }
+
+    fun openTermsAndConditionsActivity(view: View) {
+        view.setOnClickListener {
+            val intent = Intent(this, TermsAndConditionsActivity::class.java)
+            view.context.startActivity(intent)
+        }
+    }
+
+    fun openPrivacyPolicyActivity(view: View) {
+        view.setOnClickListener {
+            val intent = Intent(this, PrivacyPolicyActivity::class.java)
+            view.context.startActivity(intent)
+        }
+    }
 }
