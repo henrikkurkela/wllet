@@ -85,6 +85,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:text="@string/register"
+        android:onClick="register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextConfirmPassword" />
@@ -96,6 +97,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:text="@string/terms_and_conditions"
+        android:onClick="onCheckboxClicked"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonRegister" />
 
@@ -106,6 +108,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:text="@string/privacy_policy"
+        android:onClick="onCheckboxClicked"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBoxTermsAndConditions" />
 
@@ -116,6 +119,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:text="@string/newsletter"
+        android:onClick="onCheckboxClicked"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBoxPrivacyPolicy" />
 
@@ -127,6 +131,7 @@
         android:autoLink="web"
         android:linksClickable="true"
         android:text="@string/read"
+        android:onClick="openTermsAndConditionsActivity"
         app:layout_constraintBottom_toBottomOf="@+id/checkBoxTermsAndConditions"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -141,6 +146,7 @@
         android:autoLink="web"
         android:linksClickable="true"
         android:text="@string/read"
+        android:onClick="openPrivacyPolicyActivity"
         app:layout_constraintBottom_toBottomOf="@+id/checkBoxPrivacyPolicy"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

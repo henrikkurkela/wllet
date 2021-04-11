@@ -69,6 +69,7 @@
         android:textSize="22dp"
         android:linksClickable="true"
         android:textColor="@color/purple_700"
+        android:onClick="showRegistration"
         app:layout_constraintBottom_toBottomOf="@id/buttonLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
