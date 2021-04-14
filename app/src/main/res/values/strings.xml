@@ -15,6 +15,7 @@
     <string name="cvc">CVC</string>
     <string name="month_year">Month / Year</string>
     <string name="add">Add</string>
+    <string name="remove">Remove</string>
     <string name="Login">Login</string>
     <string name="create_new_account">Create new account</string>
     <string name="Add_new_card">Add new card</string>
