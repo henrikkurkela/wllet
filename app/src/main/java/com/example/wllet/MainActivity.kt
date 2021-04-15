@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     currentUser = auth.currentUser
 
-                    val intent = Intent(this, WalletActivity::class.java)
+                    val intent = Intent(this, WalletActivity::class.java).putExtra("user", auth.currentUser)
                     startActivity(intent)
                 } else {
                     Toast.makeText(baseContext, "Authentication failed.", Toast.LENGTH_SHORT).show()

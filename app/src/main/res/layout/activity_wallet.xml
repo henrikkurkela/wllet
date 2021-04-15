@@ -32,7 +32,7 @@
         android:textColor="@color/purple_700"
         android:textSize="25sp"
         android:linksClickable="true"
-        android:onClick="addcard"
+        android:onClick="addCard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -66,21 +66,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="350dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="300dp"
-        android:layout_marginRight="20dp"
-        app:layout_constraintStart_toEndOf="@+id/your_cards_text"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcCardList"
+        android:layout_width="0dp"
+        android:layout_height="232dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/card_info_text"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </androidx.cardview.widget.CardView>
+        app:layout_constraintTop_toBottomOf="@+id/your_cards_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
