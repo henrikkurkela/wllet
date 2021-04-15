@@ -11,7 +11,7 @@
         android:id="@+id/textViewSendRequest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="125dp"
         android:text="Send or Request"
         android:textSize="42sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,41 +26,45 @@
         android:textAlignment="center"
         android:textSize="100sp"
         app:layout_constraintTop_toBottomOf="@id/textViewSendRequest"
-        app:layout_constraintEnd_toEndOf="@id/recipientNumber"
-        app:layout_constraintStart_toStartOf="@id/recipientNumber"/>
+        app:layout_constraintEnd_toEndOf="@id/recipientEmail"
+        app:layout_constraintStart_toStartOf="@id/recipientEmail"/>
 
     <EditText
-        android:id="@+id/recipientNumber"
+        android:id="@+id/recipientEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="number"
-        app:layout_constraintTop_toBottomOf="@+id/amountOfMoney"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSend"
         app:layout_constraintEnd_toEndOf="@id/buttonRequest"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/buttonSend"
-        app:layout_constraintBottom_toTopOf="@+id/buttonSend"/>
+        app:layout_constraintTop_toBottomOf="@+id/amountOfMoney" />
 
     <Button
         android:id="@+id/buttonSend"
         android:layout_width="150dp"
         android:layout_height="80dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="32dp"
         android:text="Send"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/recipientNumber"/>
+        app:layout_constraintTop_toBottomOf="@id/recipientEmail" />
 
     <Button
         android:id="@+id/buttonRequest"
         android:layout_width="150dp"
         android:layout_height="80dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="32dp"
         android:text="Request"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/recipientNumber"/>
+        app:layout_constraintTop_toBottomOf="@id/recipientEmail" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

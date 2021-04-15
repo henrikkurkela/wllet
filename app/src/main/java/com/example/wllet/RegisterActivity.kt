@@ -13,8 +13,10 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.core.Constants
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_register.*
+import kotlin.random.Random
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -25,22 +27,24 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(R.layout.activity_register)
 
         register = FirebaseAuth.getInstance()
+
     }
 
     fun register(view: View) {
-        var editEmailText = findViewById<EditText>(R.id.editTextEmail)
-        var editNameText = findViewById<EditText>(R.id.editTextName)
-        var editPasswordText = findViewById<EditText>(R.id.editTextPassword)
-        var editConfirmPasswordText = findViewById<EditText>(R.id.editTextConfirmPassword)
+        val editEmailText = findViewById<EditText>(R.id.editTextEmail)
+        val editNameText = findViewById<EditText>(R.id.editTextName)
+        val editPasswordText = findViewById<EditText>(R.id.editTextPassword)
+        val editConfirmPasswordText = findViewById<EditText>(R.id.editTextConfirmPassword)
+        val checkTermsAndCon = findViewById<CheckBox>(R.id.checkBoxTermsAndConditions)
+        val checkPrivacyPolicy = findViewById<CheckBox>(R.id.checkBoxPrivacyPolicy)
 
-        var email = editEmailText.text.toString()
-        var name = editNameText.text.toString()
-        var password = editPasswordText.text.toString()
-        var confrimpassword = editConfirmPasswordText.text.toString()
+        val email = editEmailText.text.toString()
+        val name = editNameText.text.toString()
+        val password = editPasswordText.text.toString()
+        val confrimpassword = editConfirmPasswordText.text.toString()
 
-
-        if (email.isEmpty() || name.isEmpty() || password.isEmpty()) {
-            Toast.makeText(baseContext, "All text fields are required, terms and conditions are required and privacy policy is required", Toast.LENGTH_SHORT).show()
+        if (email.isEmpty() || name.isEmpty() || password.isEmpty() || !checkTermsAndCon.isChecked || !checkPrivacyPolicy.isChecked) {
+            Toast.makeText(baseContext, "All text fields are required, terms and conditions and privacy policy must be checked", Toast.LENGTH_SHORT).show()
         } else if (password != confrimpassword) {
             Toast.makeText(baseContext, "Passwords dose not match", Toast.LENGTH_SHORT).show()
         } else {
@@ -49,64 +53,50 @@ class RegisterActivity : AppCompatActivity() {
                         if (task.isSuccessful) {
                             Toast.makeText(baseContext, "Registration successful", Toast.LENGTH_SHORT).show()
 
-                            saveUserToFirebaseDatabase()
+                            saveUserToFirebaseDatabase(newsLetter == true)
 
                             val intent = Intent(this, MainActivity::class.java)
                             startActivity(intent)
+                            finish()
+
                         } else {
-                            Toast.makeText(baseContext, "Registration failed ${task.exception}", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(baseContext, "Registration failed: ${task.exception}", Toast.LENGTH_SHORT).show()
                         }
                     }
             }
         }
 
-    private fun saveUserToFirebaseDatabase() {
+    private fun saveUserToFirebaseDatabase(newsLetter: Boolean) {
 
-        var uid = FirebaseAuth.getInstance().uid ?: ""
-        var ref = FirebaseDatabase.getInstance().getReference("/users/$uid")
+        val uid = FirebaseAuth.getInstance().uid ?: ""
+        val ref = FirebaseDatabase.getInstance().getReference("/users/$uid")
 
-        var user = User(uid, editTextName.text.toString(),
+        val user = User(uid, editTextName.text.toString(),
                              editTextEmail.text.toString(),
-                             checkBoxTermsAndConditions.text.toString(),
-                             checkBoxPrivacyPolicy.text.toString(),
-                             checkBoxNewsletter.text.toString())
+                             newsLetter.toString().toBoolean())
 
         ref.setValue(user)
                 .addOnSuccessListener {
-                    Log.d("RegisterActivity", "User saved to firebase database")
+                    Log.d("RegisterActivity", "User saved to firebase database $newsLetter")
                 }
     }
 
-    class User(val uid: String, val name: String, val email: String, val termsAndConditions: String, val privacyPolicy: String, val newsLetter: String)
+    class User(val uid: String, val name: String, val email: String, val newsLetter: Boolean)
+
+    var newsLetter: Boolean? = null
 
     fun onCheckboxClicked(view: View) {
         if (view is CheckBox) {
             val checked: Boolean = view.isChecked
 
             when (view.id) {
-                R.id.checkBoxTermsAndConditions -> {
-                    if (checked) {
-                        checkBoxTermsAndConditions.text = "Terms and conditions 'Red'"
-                    } else if(!checked) {
-                        checkBoxTermsAndConditions.text = "Terms and conditions 'Not red'"
-                        Toast.makeText(baseContext, "Terms and conditions must be red", Toast.LENGTH_SHORT).show()
-                    }
-                }
-                R.id.checkBoxPrivacyPolicy -> {
-                    if (checked) {
-                        checkBoxPrivacyPolicy.text = "Privacy policy 'Red'"
-
-                    } else if(!checked) {
-                        checkBoxPrivacyPolicy.text = "Privacy policy 'Not Red'"
-                        Toast.makeText(baseContext, "Privacy policy must be checked", Toast.LENGTH_SHORT).show()
-                    }
-                }
                 R.id.checkBoxNewsletter -> {
                     if (checked) {
-                        checkBoxNewsletter.text = "Newsletter 'Yes'"
-
-                    } else if(!checked) {
-                        checkBoxNewsletter.text = "Newsletter 'No'"
+                        newsLetter = true
+                        Log.d("RegisterActivity", "News letter true saved to database $newsLetter")
+                    } else {
+                       newsLetter = false
+                        Log.d("RegisterActivity", "User false saved to database $newsLetter")
                     }
                 }
             }
