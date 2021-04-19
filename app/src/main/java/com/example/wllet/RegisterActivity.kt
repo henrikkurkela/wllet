@@ -73,7 +73,7 @@ class RegisterActivity : AppCompatActivity() {
 
         val user = User(uid, editTextName.text.toString(),
                              editTextEmail.text.toString(),
-                             newsLetter.toString().toBoolean())
+                             newsLetter.toString().toBoolean(), 0.toString(), 0.toString() ,0.toString())
 
         ref.setValue(user)
                 .addOnSuccessListener {
@@ -81,7 +81,7 @@ class RegisterActivity : AppCompatActivity() {
                 }
     }
 
-    class User(val uid: String, val name: String, val email: String, val newsLetter: Boolean)
+    class User(val uid: String, val name: String, val email: String, val newsLetter: Boolean, val btcbal: String, val ethbal: String, val gmebal: String)
 
     var newsLetter: Boolean? = null
 
