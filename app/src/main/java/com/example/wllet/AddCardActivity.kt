@@ -1,5 +1,6 @@
 package com.example.wllet
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -26,7 +27,7 @@ class AddCardActivity : AppCompatActivity() {
 
         validation()
     }
-    fun luhnmethod(Number: String): Boolean {
+    private fun luhnmethod(Number: String): Boolean {
         var s1 = 0
         var s2 = 0
         val reverse = StringBuffer(Number).reverse().toString()
@@ -42,10 +43,10 @@ class AddCardActivity : AppCompatActivity() {
         }
         return (s1 + s2) % 10 == 0
     }
-    fun validatecard (Number: String) {
-        var button = findViewById<TextView>(R.id.button)
-        var editTextCVC = findViewById<TextView>(R.id.editTextCVC)
-        var editTextMonthYear = findViewById<TextView>(R.id.editTextMonthYear)
+    private fun validatecard (Number: String) {
+        val button = findViewById<TextView>(R.id.button)
+        val editTextCVC = findViewById<TextView>(R.id.editTextCVC)
+        val editTextMonthYear = findViewById<TextView>(R.id.editTextMonthYear)
         var cardtype = "Unsupported"
         var validcheck = ""
         if (Number.startsWith("4")) {
@@ -65,20 +66,24 @@ class AddCardActivity : AppCompatActivity() {
             validcheck = ", Invalid card details"
             button.isEnabled = false
         }
-        var cardType = findViewById<TextView>(R.id.cardType)
+        val cardType = findViewById<TextView>(R.id.cardType)
         cardType.text = cardtype + validcheck
     }
 
-    fun validation () {
-        var editTextCardNumber = findViewById<TextView>(R.id.editTextCardNumber)
+    private fun validation () {
+        val editTextCardNumber = findViewById<TextView>(R.id.editTextCardNumber)
+        val editTextCVC = findViewById<TextView>(R.id.editTextCVC)
+        val editTextMonthYear = findViewById<TextView>(R.id.editTextMonthYear)
         editTextCardNumber.doAfterTextChanged {validatecard(editTextCardNumber.text.toString())}
+        editTextCVC.doAfterTextChanged {validatecard(editTextCardNumber.text.toString())}
+        editTextMonthYear.doAfterTextChanged {validatecard(editTextCardNumber.text.toString())}
     }
 
     fun addCard(view: View) {
-        var cardNumber = findViewById<EditText>(R.id.editTextCardNumber)
-        var cardHolder = findViewById<EditText>(R.id.editTextNameOfCardOwner)
-        var cvc = findViewById<EditText>(R.id.editTextCVC)
-        var valid = findViewById<EditText>(R.id.editTextMonthYear)
+        val cardNumber = findViewById<EditText>(R.id.editTextCardNumber)
+        val cardHolder = findViewById<EditText>(R.id.editTextNameOfCardOwner)
+        val cvc = findViewById<EditText>(R.id.editTextCVC)
+        val valid = findViewById<EditText>(R.id.editTextMonthYear)
 
         val newCard = CreditCard(cardNumber.text.toString(), cardHolder.text.toString(), user?.email.toString(), cvc.text.toString(), valid.text.toString())
 

@@ -9,10 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Wllet">
-        <activity android:name=".SendRequestActivity"></activity>
-        <activity android:name=".PrivacyPolicyActivity"></activity>
-        <activity android:name=".TermsAndConditionsActivity"></activity>
-        <activity android:name=".DealsActivity"></activity>
+        <activity android:name=".SendRequestActivity" />
+        <activity android:name=".PrivacyPolicyActivity" />
+        <activity android:name=".TermsAndConditionsActivity" />
+        <activity android:name=".DealsActivity" />
         <activity android:name=".ExchangeActivity" />
         <activity android:name=".AddCardActivity" />
         <activity android:name=".RegisterActivity" />

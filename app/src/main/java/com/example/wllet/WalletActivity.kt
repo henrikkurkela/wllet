@@ -32,7 +32,6 @@ class WalletActivity : AppCompatActivity() {
 
         database = Firebase.database.reference
         user = intent.getParcelableExtra("user")
-
         val cardListener = object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val cardsFromDatabase = snapshot.child("cards")
@@ -67,6 +66,12 @@ class WalletActivity : AppCompatActivity() {
     fun addCard(view: View) {
         view.setOnClickListener {
             val intent = Intent(this, AddCardActivity::class.java).putExtra("user", user)
+            view.context.startActivity(intent)
+        }
+    }
+    fun gotoexchange(view: View) {
+        view.setOnClickListener {
+            val intent = Intent(this, ExchangeActivity::class.java).putExtra("user", user)
             view.context.startActivity(intent)
         }
     }
