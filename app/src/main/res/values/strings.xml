@@ -36,4 +36,5 @@
     <string name="current_price_1d_1m_1y">Current price / 1D / 1M / 1Y</string>
     <string name="card_type">Card type:</string>
     <string name="unsupported">Unsupported</string>
+    <string name="add_new_service">Add new service</string>
 </resources>

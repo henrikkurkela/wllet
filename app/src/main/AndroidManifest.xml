@@ -12,16 +12,17 @@
         <activity android:name=".SendRequestActivity"></activity>
         <activity android:name=".PrivacyPolicyActivity"></activity>
         <activity android:name=".TermsAndConditionsActivity"></activity>
-        <activity android:name=".DealsActivity"></activity>
+        <activity android:name=".SubscriptionActivity"></activity>
+        <activity android:name=".DealsActivity"><intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter></activity>
         <activity android:name=".ExchangeActivity" />
         <activity android:name=".AddCardActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".WalletActivity" />
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
     </application>
 

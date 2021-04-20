@@ -1,108 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DealsActivity">
+    tools:context=".DealsActivity"
+    android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/title_deals"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/title_deals"
-        android:textColor="@color/purple_700"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.736"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
-
-    <TextView
-        android:id="@+id/wallet_logo_deals"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="5dp"
-        android:text="@string/app_name"
-        android:textColor="@color/purple_700"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/deals_ongoing"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/ongoing_promotions"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.035"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.109" />
-
-    <TextView
-        android:id="@+id/deals_popular"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/popular_now_amongst_wllet_users"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.404" />
-
-    <TextView
-        android:id="@+id/deals_all"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/show_all"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.027"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.702" />
-
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="182dp"
-        android:layout_marginBottom="9dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/deals_popular"
-        app:layout_constraintTop_toBottomOf="@+id/deals_ongoing"
-        tools:layout_editor_absoluteX="2dp">
+        android:layout_height="wrap_content"
+        android:id="@+id/recyclerView"/>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="182dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginBottom="10dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/deals_all"
-        app:layout_constraintTop_toBottomOf="@+id/deals_popular"
-        tools:layout_editor_absoluteX="16dp">
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/deals_all"
-        tools:layout_editor_absoluteX="13dp">
-
-    </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
