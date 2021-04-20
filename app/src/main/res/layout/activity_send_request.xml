@@ -8,30 +8,50 @@
     tools:context=".SendRequestActivity">
 
     <TextView
-        android:id="@+id/textViewSendRequest"
+        android:id="@+id/title_sendRequest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="125dp"
-        android:text="Send or Request"
-        android:textSize="42sp"
+        android:text="@string/title_sendRequest"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toEndOf="@+id/wallet_logo_sendRequest"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
+
+    <TextView
+        android:id="@+id/wallet_logo_sendRequest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/app_name"
+        android:textSize="38sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/amountOfMoney"
         android:layout_width="350dp"
         android:layout_height="300dp"
+        android:layout_marginTop="80dp"
         android:hint="€"
         android:textAlignment="center"
         android:textSize="100sp"
-        app:layout_constraintTop_toBottomOf="@id/textViewSendRequest"
         app:layout_constraintEnd_toEndOf="@id/recipientEmail"
-        app:layout_constraintStart_toStartOf="@id/recipientEmail"/>
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/recipientEmail"
+        app:layout_constraintTop_toBottomOf="@id/wallet_logo_sendRequest" />
 
     <EditText
         android:id="@+id/recipientEmail"
         android:layout_width="0dp"
+        android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
         android:hint="Email"
         android:inputType="textEmailAddress"
@@ -43,10 +63,10 @@
 
     <Button
         android:id="@+id/buttonSend"
-        android:layout_width="150dp"
-        android:layout_height="80dp"
+        android:layout_width="165dp"
+        android:layout_height="60dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="32dp"
         android:text="Send"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,10 +76,10 @@
 
     <Button
         android:id="@+id/buttonRequest"
-        android:layout_width="150dp"
-        android:layout_height="80dp"
+        android:layout_width="165dp"
+        android:layout_height="60dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="32dp"
         android:text="Request"
         app:layout_constraintEnd_toEndOf="parent"

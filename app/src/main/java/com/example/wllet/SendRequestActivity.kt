@@ -25,7 +25,7 @@ class SendRequestActivity : AppCompatActivity() {
                 .setTitle("Send")
                 .setMessage("Money sent")
                 .setPositiveButton("Close") { dialogInterface, which ->
-                    Toast.makeText(this,"Money sending successful", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this,"Money sent successfully", Toast.LENGTH_SHORT).show()
                     recipientEmail.setText("")
                     amountOfMoney.setText("")
                     dialogInterface.dismiss()
@@ -35,7 +35,7 @@ class SendRequestActivity : AppCompatActivity() {
                 .setTitle("Request")
                 .setMessage("Money requested")
                 .setPositiveButton("Close") { dialogInterface, which ->
-                    Toast.makeText(this, "Money requesting successful", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Money requested successfully", Toast.LENGTH_SHORT).show()
                     recipientEmail.setText("")
                     amountOfMoney.setText("")
                     dialogInterface.dismiss()

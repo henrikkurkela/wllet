@@ -11,7 +11,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/title_exchange"
-        android:textColor="@color/purple_700"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,8 +26,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="5dp"
         android:text="@string/app_name"
-        android:textColor="@color/purple_700"
-        android:textSize="40sp"
+        android:textSize="38sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -48,6 +46,7 @@
         android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,21 +55,21 @@
         <TextView
             android:id="@+id/selected"
             android:layout_width="75dp"
-            android:layout_height="32dp"
+            android:layout_height="26dp"
             android:text="@string/bitcoin"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <TextView
             android:id="@+id/owned"
             android:layout_width="70dp"
-            android:layout_height="32dp"
+            android:layout_height="26dp"
             android:text="@string/current_holdings"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <TextView
             android:id="@+id/balance"
             android:layout_width="75dp"
-            android:layout_height="32dp"
+            android:layout_height="26dp"
             android:text="@string/current_price"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
@@ -89,6 +88,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -97,14 +97,20 @@
         <EditText
             android:id="@+id/amount_asset"
             android:layout_width="100dp"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
             android:layout_height="wrap_content"
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/amount"
+            android:textAlignment="center"
             android:inputType="number" />
 
         <Button
             android:id="@+id/buttonBuy"
+            android:layout_marginStart="15dp"
+            android:paddingStart="30dp"
+            android:paddingEnd="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="actionBuy"
@@ -112,6 +118,9 @@
 
         <Button
             android:id="@+id/buttonSell"
+            android:layout_marginStart="15dp"
+            android:paddingStart="30dp"
+            android:paddingEnd="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="actionSell"

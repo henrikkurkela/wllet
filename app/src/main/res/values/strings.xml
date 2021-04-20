@@ -39,4 +39,5 @@
     <string name="error_loading_data_for_gme">Error loading data for GME: Trading with GME is currently suspended. Please try again later.</string>
     <string name="buy_crypto_with_credit_card">Buy Crypto with Credit card</string>
     <string name="refresh">Refresh</string>
+    <string name="title_sendRequest">Send and request</string>
 </resources>

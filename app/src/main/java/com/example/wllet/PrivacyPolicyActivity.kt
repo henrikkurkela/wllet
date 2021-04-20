@@ -9,7 +9,7 @@ class PrivacyPolicyActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_privacy_policy)
 
-        var webView = findViewById<WebView>(R.id.webViewPrivacyPolicy)
+        val webView = findViewById<WebView>(R.id.webViewPrivacyPolicy)
         webView.loadUrl("file:///android_asset/PrivacyPolicy.html")
     }
 }

@@ -9,7 +9,7 @@ class TermsAndConditionsActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_terms_and_conditions)
 
-        var webView = findViewById<WebView>(R.id.webViewTermsAndConditions)
+        val webView = findViewById<WebView>(R.id.webViewTermsAndConditions)
         webView.loadUrl("file:///android_asset/TermsAndConditions.html")
     }
 }
