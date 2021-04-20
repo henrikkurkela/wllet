@@ -37,22 +37,22 @@ class WalletActivity : AppCompatActivity() {
             when (menuItem.itemId) {
                 R.id.wallet -> return@OnNavigationItemSelectedListener true
                 R.id.sendrequest -> {
-                    startActivity(Intent(applicationContext, SendRequestActivity::class.java))
+                    startActivity(Intent(applicationContext, SendRequestActivity::class.java).putExtra("user", user))
                     overridePendingTransition(0, 0)
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.exchange -> {
-                    startActivity(Intent(applicationContext, ExchangeActivity::class.java))
+                    startActivity(Intent(applicationContext, ExchangeActivity::class.java).putExtra("user", user))
                     overridePendingTransition(0, 0)
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.subscriptions -> {
-                    startActivity(Intent(applicationContext, SubscriptionActivity::class.java))
+                    startActivity(Intent(applicationContext, SubscriptionActivity::class.java).putExtra("user", user))
                     overridePendingTransition(0, 0)
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.deals -> {
-                    startActivity(Intent(applicationContext, DealsActivity::class.java))
+                    startActivity(Intent(applicationContext, DealsActivity::class.java).putExtra("user", user))
                     overridePendingTransition(0, 0)
                     return@OnNavigationItemSelectedListener true
                 }
