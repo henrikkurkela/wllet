@@ -15,7 +15,6 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
-
 class ExchangeActivity : AppCompatActivity() {
 
     private lateinit var database: DatabaseReference
@@ -23,6 +22,7 @@ class ExchangeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_exchange)
+
         database = Firebase.database.reference
         user = intent.getParcelableExtra("user")
         updatePrices()
