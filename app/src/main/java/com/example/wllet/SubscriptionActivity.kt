@@ -20,7 +20,7 @@ class SubscriptionActivity: AppCompatActivity() {
         val aImageView = intent.getIntExtra("iImageView", 0)
 
         a_title.text = aTitle
-        a_description.text = aPrice
+        a_price.text = aPrice
         imageView.setImageResource(aImageView)
     }
 }

@@ -66,23 +66,18 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Title"
-        android:textColor="@color/black"
-        android:textSize="22sp"
-        android:textStyle="bold"
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"/>
 
     <TextView
-        android:id="@+id/a_description"
+        android:id="@+id/a_price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Description"
-        android:textColor="@color/lightGray"
-        android:textSize="18sp"
         android:layout_below="@+id/a_title"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="Price" />
 
     <TextView
         android:id="@+id/textViewTotalCost"
