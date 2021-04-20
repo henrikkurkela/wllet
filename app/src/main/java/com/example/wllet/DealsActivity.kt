@@ -3,9 +3,15 @@ package com.example.wllet
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.database.*
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_deals.*
@@ -15,14 +21,16 @@ class DealsActivity : AppCompatActivity() {
     private lateinit var database: DatabaseReference
     private lateinit var deals: ArrayList<DealsModel>
     private lateinit var rcDealsList: RecyclerView
+    private var user: FirebaseUser? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_deals)
 
-        deals = arrayListOf<DealsModel>()
         database = Firebase.database.reference
+        deals = arrayListOf<DealsModel>()
         rcDealsList = findViewById(R.id.recyclerView)
+        user = intent.getParcelableExtra("user")
 
         val dealsListener = object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -47,5 +55,15 @@ class DealsActivity : AppCompatActivity() {
 
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = dealsAdapter
+    }
+
+    fun addSub(view: View) {
+        var title = findViewById<TextView>(R.id.titleTv)
+        var price = findViewById<TextView>(R.id.priceTv)
+
+        val newSub = DealsModel(title.text.toString(), price.text.toString(), user?.email.toString(), image = R.drawable.placeholder)
+
+        database.child("subscriptions").push().setValue(newSub)
+        finish()
     }
 }

@@ -10,7 +10,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp" >
+        android:padding="16dp"
+        android:onClick="addSub">
 
         <ImageView
             android:layout_width="75dp"
@@ -44,9 +45,15 @@
             android:layout_marginStart="10dp"
             android:layout_below="@+id/titleTv" />
 
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:onClick="addSub"
+            android:text="Subscribe"
+            android:layout_below="@+id/priceTv"/>
+
     </RelativeLayout>
-
-
-
 
 </androidx.cardview.widget.CardView>

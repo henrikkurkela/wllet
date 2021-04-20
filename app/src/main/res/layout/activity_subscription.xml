@@ -108,4 +108,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewTotalCost" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcSubsList"
+        android:layout_width="135dp"
+        android:layout_height="155dp"
+        android:layout_below="@+id/a_price"
+        android:layout_marginTop="44dp" />
+
 </RelativeLayout>
