@@ -18,40 +18,6 @@ class SendRequestActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_send_request)
 
-        // bottom navigation setup
-        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
-
-        bottomNavigationView.selectedItemId = R.id.sendrequest
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(BottomNavigationView.OnNavigationItemSelectedListener { menuItem ->
-            when (menuItem.itemId) {
-                R.id.wallet -> {
-                    startActivity(Intent(applicationContext, WalletActivity::class.java))
-                    overridePendingTransition(0, 0)
-                    return@OnNavigationItemSelectedListener true
-                }
-                R.id.sendrequest -> {
-                    return@OnNavigationItemSelectedListener true
-                }
-                R.id.exchange -> {
-                    startActivity(Intent(applicationContext, ExchangeActivity::class.java))
-                    overridePendingTransition(0, 0)
-                    return@OnNavigationItemSelectedListener true
-                }
-                R.id.subscriptions -> {
-                    startActivity(Intent(applicationContext, SubscriptionActivity::class.java))
-                    overridePendingTransition(0, 0)
-                    return@OnNavigationItemSelectedListener true
-                }
-                R.id.deals -> {
-                    startActivity(Intent(applicationContext, DealsActivity::class.java))
-                    overridePendingTransition(0, 0)
-                    return@OnNavigationItemSelectedListener true
-                }
-            }
-            false
-        }) //bottom navigation end
-
         val send = findViewById<Button>(R.id.buttonSend)
         val request = findViewById<Button>(R.id.buttonRequest)
         val recipientEmail = findViewById<EditText>(R.id.recipientEmail)
