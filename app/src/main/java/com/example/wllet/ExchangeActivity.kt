@@ -1,6 +1,7 @@
 package com.example.wllet
 
 import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
@@ -9,6 +10,7 @@ import android.webkit.WebView
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.tabs.TabLayout
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
@@ -23,6 +25,41 @@ class ExchangeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_exchange)
+
+        // bottom navigation setup
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+
+        bottomNavigationView.selectedItemId = R.id.exchange
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(BottomNavigationView.OnNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.wallet -> {
+                    startActivity(Intent(applicationContext, WalletActivity::class.java))
+                    overridePendingTransition(0, 0)
+                    return@OnNavigationItemSelectedListener true
+                }
+                R.id.sendrequest -> {
+                    startActivity(Intent(applicationContext, SendRequestActivity::class.java))
+                    overridePendingTransition(0, 0)
+                    return@OnNavigationItemSelectedListener true
+                }
+                R.id.exchange -> {
+                    return@OnNavigationItemSelectedListener true
+                }
+                R.id.subscriptions -> {
+                    startActivity(Intent(applicationContext, SubscriptionActivity::class.java))
+                    overridePendingTransition(0, 0)
+                    return@OnNavigationItemSelectedListener true
+                }
+                R.id.deals -> {
+                    startActivity(Intent(applicationContext, DealsActivity::class.java))
+                    overridePendingTransition(0, 0)
+                    return@OnNavigationItemSelectedListener true
+                }
+            }
+            false
+        }) //bottom navigation end
+
         database = Firebase.database.reference
         user = intent.getParcelableExtra("user")
         updatePrices()
