@@ -64,15 +64,11 @@ class WalletActivity : AppCompatActivity() {
     }
 
     fun addCard(view: View) {
-        view.setOnClickListener {
-            val intent = Intent(this, AddCardActivity::class.java).putExtra("user", user)
-            view.context.startActivity(intent)
-        }
+        val intent = Intent(this, AddCardActivity::class.java).putExtra("user", user)
+        view.context.startActivity(intent)
     }
     fun gotoexchange(view: View) {
-        view.setOnClickListener {
-            val intent = Intent(this, ExchangeActivity::class.java).putExtra("user", user)
-            view.context.startActivity(intent)
-        }
+        val intent = Intent(this, ExchangeActivity::class.java).putExtra("user", user)
+        view.context.startActivity(intent)
     }
 }
