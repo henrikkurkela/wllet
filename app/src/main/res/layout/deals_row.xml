@@ -9,7 +9,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:padding="16dp">
 
         <ImageView
@@ -22,42 +22,34 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/titleTv"
-            android:text="Title"
-            android:layout_toRightOf="@id/imageIv"
+            android:text="@string/title"
             android:layout_toEndOf="@+id/imageIv"
-            android:layout_marginLeft="10dp"
             android:layout_marginStart="10dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/priceTv"
-            android:text="Price"
-            android:layout_toRightOf="@id/imageIv"
+            android:text="@string/price"
             android:layout_toEndOf="@+id/imageIv"
-            android:layout_marginLeft="10dp"
             android:layout_marginStart="10dp"
             android:layout_below="@+id/titleTv" />
-
-        <TextView
-            android:id="@+id/activeTv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Active"
-            android:layout_toRightOf="@id/imageIv"
-            android:layout_toEndOf="@+id/imageIv"
-            android:layout_below="@+id/priceTv"
-            android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp"
-            android:visibility="invisible" />
 
         <Button
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:text="Subscribe"
+            android:text="@string/subscribe"
             android:layout_below="@+id/priceTv"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="19dp"
+            android:layout_toEndOf="@+id/priceTv"
+            android:text="@string/euro" />
 
     </RelativeLayout>
 

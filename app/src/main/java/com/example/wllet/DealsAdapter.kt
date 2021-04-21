@@ -19,7 +19,6 @@ class DealsAdapter(val arrayList: ArrayList<DealsModel>, val context: Context, v
             fun bindItems(model: DealsModel) {
                 itemView.titleTv.text = model.title
                 itemView.priceTv.text = model.price
-                //itemView.activeTv.text = model.active
                 itemView.imageIv.setImageResource(model.image)
             }
         }
@@ -39,25 +38,24 @@ class DealsAdapter(val arrayList: ArrayList<DealsModel>, val context: Context, v
         holder.itemView.setOnClickListener{
 
             val model = arrayList[position]
-            var newSub : HashMap<String, Any> = HashMap()
+            val newSub : HashMap<String, Any> = HashMap()
 
             newSub["title"] = model.title
             newSub["price"] = model.price
-            //newSub["active"] = model.active
             newSub["image"] = model.image
             newSub["email"] = user?.email.toString()
 
             val ref: DatabaseReference = FirebaseDatabase.getInstance().reference
             ref.child("subscriptions").push().setValue(newSub)
 
-            /*if (position == 0) {
+            if (position == 0) {
                 Toast.makeText(
                     context,
                     "You subscribed Netflix",
                     Toast.LENGTH_SHORT
                 ).show()
             }
-            if (position == 2) {
+            if (position == 1) {
                 Toast.makeText(
                     context,
                     "You subscribed Spotify",
@@ -77,7 +75,7 @@ class DealsAdapter(val arrayList: ArrayList<DealsModel>, val context: Context, v
                     "You subscribed HBO",
                     Toast.LENGTH_SHORT
                 ).show()
-            }*/
+            }
         }
     }
 }
