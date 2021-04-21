@@ -13,12 +13,15 @@
         android:layout_height="wrap_content"
         android:text="@string/title_exchange"
         android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@color/dark_blue"
+        android:fontFamily="sans-serif-smallcaps"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toEndOf="@+id/wallet_logo_exchange"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
+        app:layout_constraintVertical_bias="0.030" />
 
     <ImageView
         android:id="@+id/wallet_logo_exchange"
@@ -45,6 +48,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:tabSelectedTextColor="@color/dark_purple"
+        app:tabTextColor="@color/dark_grey"
+        app:tabIndicator="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/wallet_logo_exchange" />
 
     <LinearLayout
@@ -62,12 +68,16 @@
             android:layout_width="75dp"
             android:layout_height="26dp"
             android:text="@string/bitcoin"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-smallcaps"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <TextView
             android:id="@+id/owned"
             android:layout_width="70dp"
             android:layout_height="26dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:textStyle="bold"
             android:text="@string/current_holdings"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
@@ -76,6 +86,7 @@
             android:layout_width="75dp"
             android:layout_height="26dp"
             android:text="@string/current_price"
+            android:fontFamily="sans-serif-smallcaps"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <Button
@@ -109,6 +120,8 @@
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/amount"
+            android:fontFamily="sans-serif-smallcaps"
+            android:textStyle="bold"
             android:textAlignment="center"
             android:inputType="number" />
 

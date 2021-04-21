@@ -12,7 +12,6 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_deals.*
 
 class DealsActivity : AppCompatActivity() {
 
@@ -51,7 +50,7 @@ class DealsActivity : AppCompatActivity() {
 
         val dealsAdapter = DealsAdapter(deals, this, user)
 
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = dealsAdapter
+        rcDealsList.layoutManager = LinearLayoutManager(this)
+        rcDealsList.adapter = dealsAdapter
     }
 }

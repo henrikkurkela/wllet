@@ -44,7 +44,6 @@
     <string name="send_or_request">Send or Request</string>
     <string name="exchange">Exchange</string>
     <string name="subscriptions">Subscriptions</string>
-    <string name="deals">Deals</string>
     <string name="valid_thru">VALID TRHU</string>
     <string name="your_card_subscriptions">Your Card Subscriptions</string>
     <string name="subscriptionsCl">Subscriptions</string>
@@ -59,4 +58,5 @@
     <string name="title">Title</string>
     <string name="price">Price</string>
     <string name="subscribe">Subscribe</string>
+    <string name="deals">Deals</string>
 </resources>
