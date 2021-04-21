@@ -25,10 +25,9 @@ class SubscriptionActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_subscription)
 
-        rcSubsList = findViewById(R.id.rcSubsList)
-        subs = arrayListOf<Subscription>()
-
         database = Firebase.database.reference
+        subs = arrayListOf<Subscription>()
+        rcSubsList = findViewById(R.id.rcSubsList)
         user = intent.getParcelableExtra("user")
 
         val subListener = object: ValueEventListener {
@@ -45,7 +44,6 @@ class SubscriptionActivity: AppCompatActivity() {
                     }
                 }
                 rcSubsList.adapter?.notifyDataSetChanged()
-
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -54,16 +52,9 @@ class SubscriptionActivity: AppCompatActivity() {
         }
         database.addValueEventListener(subListener)
 
-        rcSubsList.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        rcSubsList.adapter = SubscriptionAdapter(subs)
+        val subsAdapter = SubscriptionAdapter(subs)
 
-       /* val intent = intent
-        val aTitle = intent.getStringExtra("iTitle")
-        val aPrice = intent.getStringExtra("iPrice")
-        val aImageView = intent.getIntExtra("iImageView", 0)
-
-        a_title.text = aTitle
-        a_price.text = aPrice
-        imageView.setImageResource(aImageView)*/
+        rcSubsList.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        rcSubsList.adapter = subsAdapter
     }
 }
