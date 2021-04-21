@@ -51,19 +51,9 @@ class DealsActivity : AppCompatActivity() {
         }
         database.addValueEventListener(dealsListener)
 
-        val dealsAdapter = DealsAdapter(deals, this)
+        val dealsAdapter = DealsAdapter(deals, this, user)
 
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = dealsAdapter
-    }
-
-    fun addSub(view: View) {
-        var title = findViewById<TextView>(R.id.titleTv)
-        var price = findViewById<TextView>(R.id.priceTv)
-
-        val newSub = DealsModel(title.text.toString(), price.text.toString(), user?.email.toString(), image = R.drawable.placeholder)
-
-        database.child("subscriptions").push().setValue(newSub)
-        finish()
     }
 }

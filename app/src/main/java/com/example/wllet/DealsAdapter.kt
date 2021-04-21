@@ -6,9 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.deals_row.view.*
 
-class DealsAdapter(val arrayList: ArrayList<DealsModel>, val context: Context) :
+class DealsAdapter(val arrayList: ArrayList<DealsModel>, val context: Context, val user: FirebaseUser? = null) :
     RecyclerView.Adapter<DealsAdapter.ViewHolder>() {
         class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -33,6 +36,17 @@ class DealsAdapter(val arrayList: ArrayList<DealsModel>, val context: Context) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindItems(arrayList[position])
         holder.itemView.setOnClickListener{
+
+            val model = arrayList[position]
+            var newSub : HashMap<String, Any> = HashMap()
+
+            newSub["title"] = model.title
+            newSub["price"] = model.price
+            newSub["image"] = model.image
+            newSub["email"] = user?.email.toString()
+
+            val ref: DatabaseReference = FirebaseDatabase.getInstance().reference
+            ref.child("subscriptions").push().setValue(newSub)
 
             /*if (position == 0) {
                 Toast.makeText(
@@ -61,8 +75,7 @@ class DealsAdapter(val arrayList: ArrayList<DealsModel>, val context: Context) :
                     "You subscribed HBO",
                     Toast.LENGTH_SHORT
                 ).show()
-            }*/
-            val model = arrayList.get(position)
+            }
 
             val gTitle : String = model.title
             val gPrice : String = model.price
@@ -74,7 +87,7 @@ class DealsAdapter(val arrayList: ArrayList<DealsModel>, val context: Context) :
             intent.putExtra("iPrice", gPrice)
             intent.putExtra("aImageView", gImageView)
 
-            context.startActivity(intent)
+            context.startActivity(intent)*/
         }
     }
 }
