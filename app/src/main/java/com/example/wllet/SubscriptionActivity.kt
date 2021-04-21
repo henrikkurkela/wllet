@@ -3,6 +3,7 @@ package com.example.wllet
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DataSnapshot
@@ -53,13 +54,16 @@ class SubscriptionActivity: AppCompatActivity() {
         }
         database.addValueEventListener(subListener)
 
-        val intent = intent
+        rcSubsList.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        rcSubsList.adapter = SubscriptionAdapter(subs)
+
+       /* val intent = intent
         val aTitle = intent.getStringExtra("iTitle")
         val aPrice = intent.getStringExtra("iPrice")
         val aImageView = intent.getIntExtra("iImageView", 0)
 
         a_title.text = aTitle
         a_price.text = aPrice
-        imageView.setImageResource(aImageView)
+        imageView.setImageResource(aImageView)*/
     }
 }
