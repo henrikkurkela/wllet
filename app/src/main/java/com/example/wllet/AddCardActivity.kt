@@ -11,7 +11,6 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_add_card.*
 
 class AddCardActivity : AppCompatActivity() {
 
@@ -31,7 +30,7 @@ class AddCardActivity : AppCompatActivity() {
         var s1 = 0
         var s2 = 0
         val reverse = StringBuffer(Number).reverse().toString()
-        for (i in reverse.indices) {
+        for (i in reverse.indices) {2649
             val digit = Character.digit(reverse[i], 10)
             when {
                 i % 2 == 0 -> s1 += digit

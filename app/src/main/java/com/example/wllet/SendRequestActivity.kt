@@ -8,8 +8,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_send_request.*
-import org.w3c.dom.Text
 
 class SendRequestActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

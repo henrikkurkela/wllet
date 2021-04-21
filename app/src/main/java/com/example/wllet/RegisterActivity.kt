@@ -4,19 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.core.Constants
-import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_register.*
-import kotlin.random.Random
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -67,9 +60,11 @@ class RegisterActivity : AppCompatActivity() {
         }
 
     private fun saveUserToFirebaseDatabase(newsLetter: Boolean) {
-
         val uid = FirebaseAuth.getInstance().uid ?: ""
         val ref = FirebaseDatabase.getInstance().getReference("/users/$uid")
+
+        val editTextName = findViewById<EditText>(R.id.editTextName)
+        val editTextEmail = findViewById<EditText>(R.id.editTextEmail)
 
         val user = User(uid, editTextName.text.toString(),
                              editTextEmail.text.toString(),

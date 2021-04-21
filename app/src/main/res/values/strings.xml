@@ -19,7 +19,7 @@
     <string name="Login">Login</string>
     <string name="create_new_account">Create new account</string>
     <string name="Add_new_card">Add new card</string>
-    <string name="virtual_cards">Your virtual cards</string>
+    <string name="virtual_cards">YOUR VIRTUAL CARDS</string>
     <string name="title_exchange">Crypto exchange</string>
     <string name="title_deals">Discover deals</string>
     <string name="ongoing_promotions">Ongoing promotions</string>
@@ -42,7 +42,8 @@
     <string name="title_sendRequest">Send and request</string>
     <string name="wallet">Wallet</string>
     <string name="send_or_request">Send or Request</string>
-    <string name="exchange">exchange</string>
-    <string name="subscriptions">subscriptions</string>
+    <string name="exchange">Exchange</string>
+    <string name="subscriptions">Subscriptions</string>
     <string name="deals">Deals</string>
+    <string name="valid_thru">VALID TRHU</string>
 </resources>
