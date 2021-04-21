@@ -30,7 +30,7 @@ class AddCardActivity : AppCompatActivity() {
         var s1 = 0
         var s2 = 0
         val reverse = StringBuffer(Number).reverse().toString()
-        for (i in reverse.indices) {2649
+        for (i in reverse.indices) {
             val digit = Character.digit(reverse[i], 10)
             when {
                 i % 2 == 0 -> s1 += digit
