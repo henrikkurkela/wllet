@@ -10,37 +10,36 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp">
-
-        <ImageView
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:id="@+id/imageIv"
-            android:src="@mipmap/ic_launcher" />
+        android:padding="15dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/titleTv"
             android:text="@string/title"
-            android:layout_toEndOf="@+id/imageIv"
+            android:textStyle="bold"
+            android:textColor="@color/dark_purple"
+            android:textSize="18sp"
             android:layout_marginStart="10dp" />
+
+        <TextView
+            android:id="@+id/priceTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleTv"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="-23dp"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:text="@string/price" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/priceTv"
-            android:text="@string/price"
-            android:layout_toEndOf="@+id/imageIv"
-            android:layout_marginStart="10dp"
-            android:layout_below="@+id/titleTv" />
-        
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="19dp"
+            android:layout_marginStart="5dp"
             android:layout_toEndOf="@+id/priceTv"
+            android:textSize="20sp"
+            android:textStyle="bold"
             android:text="@string/euro" />
 
     </RelativeLayout>

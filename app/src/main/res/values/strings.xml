@@ -19,7 +19,7 @@
     <string name="Login">Login</string>
     <string name="create_new_account">Create new account</string>
     <string name="Add_new_card">Add new card</string>
-    <string name="virtual_cards">Your virtual cards</string>
+    <string name="virtual_cards">YOUR VIRTUAL CARDS</string>
     <string name="title_exchange">Crypto exchange</string>
     <string name="title_deals">Discover deals</string>
     <string name="ongoing_promotions">Ongoing promotions</string>
@@ -39,11 +39,12 @@
     <string name="error_loading_data_for_gme">Error loading data for GME: Trading with GME is currently suspended. Please try again later.</string>
     <string name="buy_crypto_with_credit_card">Buy Crypto with Credit card</string>
     <string name="refresh">Refresh</string>
+    <string name="title_sendRequest">Send and request</string>
     <string name="wallet">Wallet</string>
     <string name="send_or_request">Send or Request</string>
-    <string name="exchange">exchange</string>
-    <string name="subscriptions">subscriptions</string>
-    <string name="deals">Deals</string>
+    <string name="exchange">Exchange</string>
+    <string name="subscriptions">Subscriptions</string>
+    <string name="valid_thru">VALID TRHU</string>
     <string name="your_card_subscriptions">Your Card Subscriptions</string>
     <string name="subscriptionsCl">Subscriptions</string>
     <string name="application">Application</string>
@@ -57,4 +58,5 @@
     <string name="title">Title</string>
     <string name="price">Price</string>
     <string name="subscribe">Subscribe</string>
+    <string name="deals">Deals</string>
 </resources>

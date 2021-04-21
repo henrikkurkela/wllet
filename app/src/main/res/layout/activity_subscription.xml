@@ -5,18 +5,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
+    android:background="@color/light_grey"
     tools:context=".SubscriptionActivity">
 
     <TextView
         android:id="@+id/textViewSubscriptions"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="@string/subscriptionsCl"
-        android:textSize="42sp"
-        android:layout_marginTop="5dp"
+        android:textColor="@color/dark_blue"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintStart_toEndOf="@+id/wallet_logo_sendRequest"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.030" />
+
+    <ImageView
+        android:id="@+id/wallet_logo_sendRequest"
+        android:layout_width="60dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_subscriptions"
+        android:text="@string/app_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintVertical_bias="0.0"
+        app:tint="@color/teal" />
 
     <TextView
         android:id="@+id/textViewYourCardSubs"
@@ -24,7 +46,9 @@
         android:layout_height="wrap_content"
         android:text="@string/your_card_subscriptions"
         android:textSize="24sp"
-        android:layout_marginTop="128dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textColor="@color/dark_purple"
+        android:layout_marginTop="110dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -34,8 +58,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/application"
+        android:textStyle="bold"
+        android:textSize="18sp"
         android:layout_marginTop="175dp"
-        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintHorizontal_bias="0.03"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -45,6 +71,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/status"
+        android:textStyle="bold"
+        android:textSize="18sp"
         android:layout_marginTop="175dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -55,6 +83,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/cost"
+        android:textStyle="bold"
+        android:textSize="18sp"
         android:layout_marginTop="175dp"
         app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
@@ -65,7 +95,7 @@
         android:id="@+id/rcSubsList"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewSubscriptions"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewStatus" />

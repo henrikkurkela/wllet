@@ -19,7 +19,6 @@ class DealsAdapter(val arrayList: ArrayList<DealsModel>, val context: Context, v
             fun bindItems(model: DealsModel) {
                 itemView.titleTv.text = model.title
                 itemView.priceTv.text = model.price
-                itemView.imageIv.setImageResource(model.image)
             }
         }
 
