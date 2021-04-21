@@ -44,4 +44,17 @@
     <string name="exchange">exchange</string>
     <string name="subscriptions">subscriptions</string>
     <string name="deals">Deals</string>
+    <string name="your_card_subscriptions">Your Card Subscriptions</string>
+    <string name="subscriptionsCl">Subscriptions</string>
+    <string name="application">Application</string>
+    <string name="status">Status</string>
+    <string name="cost">Cost</string>
+    <string name="total_cost_per_month">"Total cost per month: "</string>
+    <string name="unsubscribe">Unsubscribe</string>
+    <string name="euro">€</string>
+    <string name="active">Active</string>
+    <string name="manage_subscriptions">Manage Subscriptions</string>
+    <string name="title">Title</string>
+    <string name="price">Price</string>
+    <string name="subscribe">Subscribe</string>
 </resources>
