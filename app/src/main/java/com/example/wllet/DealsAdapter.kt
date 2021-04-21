@@ -51,28 +51,28 @@ class DealsAdapter(val arrayList: ArrayList<DealsModel>, val context: Context, v
             if (position == 0) {
                 Toast.makeText(
                     context,
-                    "You subscribed Netflix",
+                        "You subscribed to " +model.title,
                     Toast.LENGTH_SHORT
                 ).show()
             }
             if (position == 1) {
                 Toast.makeText(
                     context,
-                    "You subscribed Spotify",
+                        "You subscribed to " +model.title,
                     Toast.LENGTH_SHORT
                 ).show()
             }
             if (position == 2) {
                 Toast.makeText(
                     context,
-                    "You subscribed Disney+",
+                        "You subscribed to " +model.title,
                     Toast.LENGTH_SHORT
                 ).show()
             }
             if (position == 3) {
                 Toast.makeText(
                     context,
-                    "You subscribed HBO",
+                        "You subscribed to " +model.title,
                     Toast.LENGTH_SHORT
                 ).show()
             }

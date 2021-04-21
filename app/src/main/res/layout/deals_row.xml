@@ -34,15 +34,7 @@
             android:layout_toEndOf="@+id/imageIv"
             android:layout_marginStart="10dp"
             android:layout_below="@+id/titleTv" />
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:text="@string/subscribe"
-            android:layout_below="@+id/priceTv"/>
-
+        
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
