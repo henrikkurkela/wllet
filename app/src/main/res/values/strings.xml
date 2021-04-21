@@ -32,9 +32,16 @@
     <string name="bitcoin">Bitcoin</string>
     <string name="gme_coin">GME Coin</string>
     <string name="ethereum">Ethereum</string>
-    <string name="current_holdings">Current holdings:</string>
-    <string name="current_price_1d_1m_1y">Current price / 1D / 1M / 1Y</string>
+    <string name="current_holdings">Owned:</string>
+    <string name="current_price">0</string>
     <string name="card_type">Card type:</string>
     <string name="unsupported">Unsupported</string>
-    <string name="add_new_service">Add new service</string>
+    <string name="error_loading_data_for_gme">Error loading data for GME: Trading with GME is currently suspended. Please try again later.</string>
+    <string name="buy_crypto_with_credit_card">Buy Crypto with Credit card</string>
+    <string name="refresh">Refresh</string>
+    <string name="wallet">Wallet</string>
+    <string name="send_or_request">Send or Request</string>
+    <string name="exchange">exchange</string>
+    <string name="subscriptions">subscriptions</string>
+    <string name="deals">Deals</string>
 </resources>

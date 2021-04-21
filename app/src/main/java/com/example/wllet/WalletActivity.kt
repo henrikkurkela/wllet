@@ -7,6 +7,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -27,12 +28,42 @@ class WalletActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_wallet)
 
+        // bottom navigation setup
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+
+        bottomNavigationView.selectedItemId = R.id.wallet
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(BottomNavigationView.OnNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.wallet -> return@OnNavigationItemSelectedListener true
+                R.id.sendrequest -> {
+                    startActivity(Intent(applicationContext, SendRequestActivity::class.java).putExtra("user", user))
+                    overridePendingTransition(0, 0)
+                    return@OnNavigationItemSelectedListener true
+                }
+                R.id.exchange -> {
+                    startActivity(Intent(applicationContext, ExchangeActivity::class.java).putExtra("user", user))
+                    overridePendingTransition(0, 0)
+                    return@OnNavigationItemSelectedListener true
+                }
+                R.id.subscriptions -> {
+                    startActivity(Intent(applicationContext, SubscriptionActivity::class.java).putExtra("user", user))
+                    overridePendingTransition(0, 0)
+                    return@OnNavigationItemSelectedListener true
+                }
+                R.id.deals -> {
+                    startActivity(Intent(applicationContext, DealsActivity::class.java).putExtra("user", user))
+                    overridePendingTransition(0, 0)
+                    return@OnNavigationItemSelectedListener true
+                }
+            }
+            false
+        }) //bottom navigation end
         rcCardList = findViewById(R.id.rcCardList)
         cards = arrayListOf<CreditCard>()
 
         database = Firebase.database.reference
         user = intent.getParcelableExtra("user")
-
         val cardListener = object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val cardsFromDatabase = snapshot.child("cards")
@@ -62,12 +93,16 @@ class WalletActivity : AppCompatActivity() {
 
         rcCardList.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         rcCardList.adapter = CardAdapter(cards)
+
+
     }
 
     fun addCard(view: View) {
-        view.setOnClickListener {
-            val intent = Intent(this, AddCardActivity::class.java).putExtra("user", user)
-            view.context.startActivity(intent)
-        }
+        val intent = Intent(this, AddCardActivity::class.java).putExtra("user", user)
+        view.context.startActivity(intent)
+    }
+    fun gotoexchange(view: View) {
+        val intent = Intent(this, ExchangeActivity::class.java).putExtra("user", user)
+        view.context.startActivity(intent)
     }
 }

@@ -73,7 +73,7 @@ class RegisterActivity : AppCompatActivity() {
 
         val user = User(uid, editTextName.text.toString(),
                              editTextEmail.text.toString(),
-                             newsLetter.toString().toBoolean())
+                             newsLetter.toString().toBoolean(), 0.toString(), 0.toString() ,0.toString())
 
         ref.setValue(user)
                 .addOnSuccessListener {
@@ -81,7 +81,7 @@ class RegisterActivity : AppCompatActivity() {
                 }
     }
 
-    class User(val uid: String, val name: String, val email: String, val newsLetter: Boolean)
+    class User(val uid: String, val name: String, val email: String, val newsLetter: Boolean, val btcbal: String, val ethbal: String, val gmebal: String)
 
     var newsLetter: Boolean? = null
 
@@ -104,16 +104,12 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     fun openTermsAndConditionsActivity(view: View) {
-        view.setOnClickListener {
-            val intent = Intent(this, TermsAndConditionsActivity::class.java)
-            view.context.startActivity(intent)
-        }
+        val intent = Intent(this, TermsAndConditionsActivity::class.java)
+        view.context.startActivity(intent)
     }
 
     fun openPrivacyPolicyActivity(view: View) {
-        view.setOnClickListener {
-            val intent = Intent(this, PrivacyPolicyActivity::class.java)
-            view.context.startActivity(intent)
-        }
+        val intent = Intent(this, PrivacyPolicyActivity::class.java)
+        view.context.startActivity(intent)
     }
 }

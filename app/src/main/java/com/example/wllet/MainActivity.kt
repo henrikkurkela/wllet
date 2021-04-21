@@ -51,9 +51,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun showRegistration(view: View) {
-        view.setOnClickListener{
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent)
-        }
+        val intent = Intent(this, RegisterActivity::class.java)
+        startActivity(intent)
     }
 }
