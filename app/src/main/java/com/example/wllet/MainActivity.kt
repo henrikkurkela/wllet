@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.auth.FirebaseAuth
@@ -29,10 +28,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun login(view: View) {
-        var emailEditText = findViewById<EditText>(R.id.loginEmail)
-        var passwordEditText = findViewById<EditText>(R.id.loginPassword)
-        var email = emailEditText.text.toString()
-        var password = passwordEditText.text.toString()
+        val emailEditText = findViewById<EditText>(R.id.loginEmail)
+        val passwordEditText = findViewById<EditText>(R.id.loginPassword)
+        val email = emailEditText.text.toString()
+        val password = passwordEditText.text.toString()
 
         if (email == "" || password == "") {
             Toast.makeText(baseContext, "Enter credentials.", Toast.LENGTH_SHORT).show()
@@ -41,7 +40,8 @@ class MainActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     currentUser = auth.currentUser
 
-                    val intent = Intent(this, WalletActivity::class.java).putExtra("user", auth.currentUser)
+                    val intent =
+                        Intent(this, WalletActivity::class.java).putExtra("user", auth.currentUser)
                     startActivity(intent)
                 } else {
                     Toast.makeText(baseContext, "Authentication failed.", Toast.LENGTH_SHORT).show()
