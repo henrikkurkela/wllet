@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     android:background="@color/light_grey"
+    android:padding="16dp"
     tools:context=".SubscriptionActivity">
 
     <TextView
@@ -20,18 +20,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.065"
-        app:layout_constraintStart_toEndOf="@+id/wallet_logo_sendRequest"
+        app:layout_constraintStart_toEndOf="@+id/walletLogoSendRequest"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.030" />
 
     <ImageView
-        android:id="@+id/wallet_logo_sendRequest"
+        android:id="@+id/walletLogoSendRequest"
         android:layout_width="60dp"
         android:layout_height="45dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
+        android:contentDescription="@string/appName"
         android:src="@drawable/ic_subscriptions"
-        android:text="@string/app_name"
+        android:text="@string/appName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -44,52 +45,52 @@
         android:id="@+id/textViewYourCardSubs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/your_card_subscriptions"
-        android:textSize="24sp"
-        android:fontFamily="sans-serif-smallcaps"
-        android:textColor="@color/dark_purple"
         android:layout_marginTop="110dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/yourCardSubscriptions"
+        android:textColor="@color/dark_purple"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewApplication"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/application"
-        android:textStyle="bold"
-        android:textSize="18sp"
         android:layout_marginTop="175dp"
+        android:text="@string/application"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.03"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/status"
-        android:textStyle="bold"
-        android:textSize="18sp"
         android:layout_marginTop="175dp"
+        android:text="@string/status"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewCost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/cost"
-        android:textStyle="bold"
-        android:textSize="18sp"
         android:layout_marginTop="175dp"
+        android:text="@string/cost"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcSubsList"

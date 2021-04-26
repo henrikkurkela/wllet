@@ -1,10 +1,8 @@
 package com.example.wllet
 
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -20,32 +18,32 @@ class SendRequestActivity : AppCompatActivity() {
         val amountOfMoney = findViewById<EditText>(R.id.amountOfMoney)
 
         val sendMoneyDialog = AlertDialog.Builder(this)
-                .setTitle("Send")
-                .setMessage("Money sent")
-                .setPositiveButton("Close") { dialogInterface, which ->
-                    Toast.makeText(this,"Money sent successfully", Toast.LENGTH_SHORT).show()
-                    recipientEmail.setText("")
-                    amountOfMoney.setText("")
-                    dialogInterface.dismiss()
-                }.create()
+            .setTitle("Send")
+            .setMessage("Money sent")
+            .setPositiveButton("Close") { dialogInterface, _ ->
+                Toast.makeText(this, "Money sent successfully", Toast.LENGTH_SHORT).show()
+                recipientEmail.setText("")
+                amountOfMoney.setText("")
+                dialogInterface.dismiss()
+            }.create()
 
         val requestMoneyDialog = AlertDialog.Builder(this)
-                .setTitle("Request")
-                .setMessage("Money requested")
-                .setPositiveButton("Close") { dialogInterface, which ->
-                    Toast.makeText(this, "Money requested successfully", Toast.LENGTH_SHORT).show()
-                    recipientEmail.setText("")
-                    amountOfMoney.setText("")
-                    dialogInterface.dismiss()
-                }.create()
+            .setTitle("Request")
+            .setMessage("Money requested")
+            .setPositiveButton("Close") { dialogInterface, _ ->
+                Toast.makeText(this, "Money requested successfully", Toast.LENGTH_SHORT).show()
+                recipientEmail.setText("")
+                amountOfMoney.setText("")
+                dialogInterface.dismiss()
+            }.create()
 
 
-            send.setOnClickListener {
-                sendMoneyDialog.show()
-            }
+        send.setOnClickListener {
+            sendMoneyDialog.show()
+        }
 
-            request.setOnClickListener {
-                requestMoneyDialog.show()
-            }
+        request.setOnClickListener {
+            requestMoneyDialog.show()
+        }
     }
 }

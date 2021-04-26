@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -23,20 +23,20 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="90dp"
-                android:textSize="18sp"
                 android:letterSpacing=".2"
                 android:textColor="@color/black"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/valid_thru"
                 android:paddingStart="235dp"
-                android:paddingEnd="10dp"
                 android:paddingTop="145dp"
-                android:textSize="12sp"/>
+                android:paddingEnd="10dp"
+                android:text="@string/validThrough"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/textViewHolder"

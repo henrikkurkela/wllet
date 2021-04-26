@@ -12,9 +12,9 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_subscription.*
 
-class SubscriptionActivity: AppCompatActivity() {
+@Suppress("NAME_SHADOWING")
+class SubscriptionActivity : AppCompatActivity() {
 
     private lateinit var database: DatabaseReference
     private lateinit var subs: ArrayList<Subscription>
@@ -30,7 +30,7 @@ class SubscriptionActivity: AppCompatActivity() {
         rcSubsList = findViewById(R.id.rcSubsList)
         user = intent.getParcelableExtra("user")
 
-        val subListener = object: ValueEventListener {
+        val subListener = object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val subsFromDatabase = snapshot.child("subscriptions")
                 subs.clear()

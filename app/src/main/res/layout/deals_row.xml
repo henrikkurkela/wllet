@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="3dp"
     app:cardElevation="3dp"
     app:cardUseCompatPadding="true">
@@ -13,14 +13,14 @@
         android:padding="15dp">
 
         <TextView
+            android:id="@+id/titleTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/titleTv"
+            android:layout_marginStart="10dp"
             android:text="@string/title"
-            android:textStyle="bold"
             android:textColor="@color/dark_purple"
             android:textSize="18sp"
-            android:layout_marginStart="10dp" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/priceTv"
@@ -29,18 +29,18 @@
             android:layout_below="@+id/titleTv"
             android:layout_marginStart="300dp"
             android:layout_marginTop="-23dp"
-            android:textStyle="bold"
+            android:text="@string/price"
             android:textSize="18sp"
-            android:text="@string/price" />
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_toEndOf="@+id/priceTv"
+            android:text="@string/euro"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:text="@string/euro" />
+            android:textStyle="bold" />
 
     </RelativeLayout>
 

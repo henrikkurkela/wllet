@@ -13,6 +13,7 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
+@Suppress("NAME_SHADOWING")
 class DealsActivity : AppCompatActivity() {
 
     private lateinit var database: DatabaseReference
@@ -29,7 +30,7 @@ class DealsActivity : AppCompatActivity() {
         rcDealsList = findViewById(R.id.recyclerView)
         user = intent.getParcelableExtra("user")
 
-        val dealsListener = object: ValueEventListener {
+        val dealsListener = object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val dealsFromDatabase = snapshot.child("deals")
                 deals.clear()

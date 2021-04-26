@@ -34,30 +34,39 @@ class RegisterActivity : AppCompatActivity() {
         val email = editEmailText.text.toString()
         val name = editNameText.text.toString()
         val password = editPasswordText.text.toString()
-        val confrimpassword = editConfirmPasswordText.text.toString()
+        val confirmPassword = editConfirmPasswordText.text.toString()
 
         if (email.isEmpty() || name.isEmpty() || password.isEmpty() || !checkTermsAndCon.isChecked || !checkPrivacyPolicy.isChecked) {
-            Toast.makeText(baseContext, "All text fields are required, terms and conditions and privacy policy must be checked", Toast.LENGTH_SHORT).show()
-        } else if (password != confrimpassword) {
+            Toast.makeText(
+                baseContext,
+                "All text fields are required, terms and conditions and privacy policy must be checked",
+                Toast.LENGTH_SHORT
+            ).show()
+        } else if (password != confirmPassword) {
             Toast.makeText(baseContext, "Passwords dose not match", Toast.LENGTH_SHORT).show()
         } else {
             register.createUserWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(this) { task ->
-                        if (task.isSuccessful) {
-                            Toast.makeText(baseContext, "Registration successful", Toast.LENGTH_SHORT).show()
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        Toast.makeText(baseContext, "Registration successful", Toast.LENGTH_SHORT)
+                            .show()
 
-                            saveUserToFirebaseDatabase(newsLetter == true)
+                        saveUserToFirebaseDatabase(newsLetter == true)
 
-                            val intent = Intent(this, MainActivity::class.java)
-                            startActivity(intent)
-                            finish()
+                        val intent = Intent(this, MainActivity::class.java)
+                        startActivity(intent)
+                        finish()
 
-                        } else {
-                            Toast.makeText(baseContext, "Registration failed: ${task.exception}", Toast.LENGTH_SHORT).show()
-                        }
+                    } else {
+                        Toast.makeText(
+                            baseContext,
+                            "Registration failed: ${task.exception}",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
-            }
+                }
         }
+    }
 
     private fun saveUserToFirebaseDatabase(newsLetter: Boolean) {
         val uid = FirebaseAuth.getInstance().uid ?: ""
@@ -66,17 +75,27 @@ class RegisterActivity : AppCompatActivity() {
         val editTextName = findViewById<EditText>(R.id.editTextName)
         val editTextEmail = findViewById<EditText>(R.id.editTextEmail)
 
-        val user = User(uid, editTextName.text.toString(),
-                             editTextEmail.text.toString(),
-                             newsLetter.toString().toBoolean(), 0.toString(), 0.toString() ,0.toString())
+        val user = User(
+            uid, editTextName.text.toString(),
+            editTextEmail.text.toString(),
+            newsLetter.toString().toBoolean(), 0.toString(), 0.toString(), 0.toString()
+        )
 
         ref.setValue(user)
-                .addOnSuccessListener {
-                    Log.d("RegisterActivity", "User saved to firebase database $newsLetter")
-                }
+            .addOnSuccessListener {
+                Log.d("RegisterActivity", "User saved to firebase database $newsLetter")
+            }
     }
 
-    class User(val uid: String, val name: String, val email: String, val newsLetter: Boolean, val btcbal: String, val ethbal: String, val gmebal: String)
+    class User(
+        val uid: String,
+        val name: String,
+        val email: String,
+        val newsLetter: Boolean,
+        val btcbal: String,
+        val ethbal: String,
+        val gmebal: String
+    )
 
     var newsLetter: Boolean? = null
 
@@ -90,7 +109,7 @@ class RegisterActivity : AppCompatActivity() {
                         newsLetter = true
                         Log.d("RegisterActivity", "News letter true saved to database $newsLetter")
                     } else {
-                       newsLetter = false
+                        newsLetter = false
                         Log.d("RegisterActivity", "User false saved to database $newsLetter")
                     }
                 }

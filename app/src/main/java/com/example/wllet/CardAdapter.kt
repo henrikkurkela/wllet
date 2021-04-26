@@ -10,9 +10,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
 
 
-class CardAdapter(private val myDataset: ArrayList<CreditCard>): RecyclerView.Adapter<CardAdapter.MyViewHolder>() {
+class CardAdapter(private val myDataset: ArrayList<CreditCard>) :
+    RecyclerView.Adapter<CardAdapter.MyViewHolder>() {
 
-    class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val number: TextView = itemView.findViewById(R.id.textViewNumber)
         val holder: TextView = itemView.findViewById(R.id.textViewHolder)
         val valid: TextView = itemView.findViewById(R.id.textViewValid)
@@ -32,7 +33,8 @@ class CardAdapter(private val myDataset: ArrayList<CreditCard>): RecyclerView.Ad
         holder.remove.setOnClickListener {
 
             val ref: DatabaseReference = FirebaseDatabase.getInstance().reference
-            val query: Query = ref.child("cards").orderByChild("number").equalTo(myDataset[position].number)
+            val query: Query =
+                ref.child("cards").orderByChild("number").equalTo(myDataset[position].number)
 
             val valueEventListener = object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {

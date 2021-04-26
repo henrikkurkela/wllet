@@ -17,6 +17,7 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
 
+@Suppress("NAME_SHADOWING")
 class WalletActivity : AppCompatActivity() {
 
     private lateinit var database: DatabaseReference
@@ -29,30 +30,50 @@ class WalletActivity : AppCompatActivity() {
         setContentView(R.layout.activity_wallet)
 
         // bottom navigation setup
-        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigation)
 
         bottomNavigationView.selectedItemId = R.id.wallet
 
         bottomNavigationView.setOnNavigationItemSelectedListener(BottomNavigationView.OnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.wallet -> return@OnNavigationItemSelectedListener true
-                R.id.sendrequest -> {
-                    startActivity(Intent(applicationContext, SendRequestActivity::class.java).putExtra("user", user))
+                R.id.sendRequest -> {
+                    startActivity(
+                        Intent(
+                            applicationContext,
+                            SendRequestActivity::class.java
+                        ).putExtra("user", user)
+                    )
                     overridePendingTransition(0, 0)
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.exchange -> {
-                    startActivity(Intent(applicationContext, ExchangeActivity::class.java).putExtra("user", user))
+                    startActivity(
+                        Intent(applicationContext, ExchangeActivity::class.java).putExtra(
+                            "user",
+                            user
+                        )
+                    )
                     overridePendingTransition(0, 0)
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.subscriptions -> {
-                    startActivity(Intent(applicationContext, SubscriptionActivity::class.java).putExtra("user", user))
+                    startActivity(
+                        Intent(
+                            applicationContext,
+                            SubscriptionActivity::class.java
+                        ).putExtra("user", user)
+                    )
                     overridePendingTransition(0, 0)
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.deals -> {
-                    startActivity(Intent(applicationContext, DealsActivity::class.java).putExtra("user", user))
+                    startActivity(
+                        Intent(
+                            applicationContext,
+                            DealsActivity::class.java
+                        ).putExtra("user", user)
+                    )
                     overridePendingTransition(0, 0)
                     return@OnNavigationItemSelectedListener true
                 }
@@ -64,7 +85,7 @@ class WalletActivity : AppCompatActivity() {
 
         database = Firebase.database.reference
         user = intent.getParcelableExtra("user")
-        val cardListener = object: ValueEventListener {
+        val cardListener = object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val cardsFromDatabase = snapshot.child("cards")
                 cards.clear()
@@ -99,10 +120,6 @@ class WalletActivity : AppCompatActivity() {
 
     fun addCard(view: View) {
         val intent = Intent(this, AddCardActivity::class.java).putExtra("user", user)
-        view.context.startActivity(intent)
-    }
-    fun gotoexchange(view: View) {
-        val intent = Intent(this, ExchangeActivity::class.java).putExtra("user", user)
         view.context.startActivity(intent)
     }
 }
